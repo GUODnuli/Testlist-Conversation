@@ -15,13 +15,13 @@ if __name__ == "__main__":
     current_directory = os.getcwd()
 
     # 加载配置
-    config_path = current_directory + f"\\config\\xmind_config.json"
+    config_path = current_directory + f"\\config\\Testcase_config.json"
     config_data = get_config(config_path)
     file_name = config_data["必填项"]["用例文件名"]
     if file_name == "":
         print("请在配置中填写文件名")
 
-    xmind_file_path = current_directory + f"\\examples\\{file_name}.xmind"
+    xmind_file_path = current_directory + f"\\input\\{file_name}.xmind"
     excel_file_path = current_directory + f"\\output\\{file_name}.xlsx"
     print(f"\n开始解析xmind文件，文件路径：{xmind_file_path}\n\n")
     
