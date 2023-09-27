@@ -34,11 +34,13 @@ def create_tree_node(dictData: dict) -> TreeNode:
         level = dictData["markers"][0]
         match level:
             case "priority-1":
-                level = "1"
+                level = "高"
             case "priority-2":
-                level = "2"
+                level = "中"
             case "priority-3":
-                level = "3"
+                level = "低"
+            case _:
+                level = "低"
         steptopic = dictData["topics"][0]
         resulttopic = steptopic["topics"][0]
         step = steptopic["title"]
