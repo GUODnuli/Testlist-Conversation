@@ -1,7 +1,7 @@
 import os
-import xmind_parser.xmind_to_tree as xmind_to_tree
-import xmind_parser.excel_output as excel_output
-from xmind_parser.config_loader import get_config
+import code.xmind_to_tree as xmind_to_tree
+import code.excel_output as excel_output
+from code.config_loader import get_config
 
 def format_print(text: str, max_len: int, char="*") -> str:
     length = len(text)
