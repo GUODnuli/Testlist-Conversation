@@ -20,6 +20,7 @@ def parse_xmind_to_tree(input_file: str) -> list:
 
 def create_tree_node(dictData: dict) -> TreeNode:
     # 识别用例目录并准备创建目录节点或用例节点的数据
+    print(dictData)
     id, title = dictData["id"], dictData["title"]
     step, result, level = None, None, None
 

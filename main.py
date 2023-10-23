@@ -20,9 +20,12 @@ if __name__ == "__main__":
     file_name = config_data["必填项"]["用例文件名"]
     if file_name == "":
         print("请在配置中填写文件名")
+    template_name = config_data["必填项"]["模板文件名"]
 
     xmind_file_path = current_directory + f"\\input\\{file_name}.xmind"
     excel_file_path = current_directory + f"\\output\\{file_name}.xlsx"
+    template_file = current_directory + f"\\output\\{template_name}.xlsx"
+    output_dir = current_directory + f"\\output\\"
     print(f"\n开始解析xmind文件，文件路径：{xmind_file_path}\n\n")
     
     print(f"配置文件路径：{config_path}\n\n")
@@ -31,6 +34,6 @@ if __name__ == "__main__":
     parsed_tree = xmind_to_tree.parse_xmind_to_tree(xmind_file_path)
 
     # 输出解析结果
-    excel_output.process_to_excel(parsed_tree, excel_file_path, config_data)
+    excel_output.process_to_excel(parsed_tree, excel_file_path, template_file, config_data)
     print(f"转换已结束\n\n")
     print(f"excel文件已输出到：{current_directory}\output\{file_name}.xlsx\n")

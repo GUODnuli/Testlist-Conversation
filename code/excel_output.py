@@ -1,7 +1,14 @@
 import openpyxl
+import os
+import shutil
 from .Data_struct import TreeNode
 
-def process_to_excel(root: TreeNode, output_file: str, config_data: dict):
+def process_to_excel(root: TreeNode, output_file: str, template_file: str, config_data: dict):
+    # 检查excel文件是否存在，若不存在则创建一个
+    if not os.path.exists(output_file):
+        # 确保 template.xlsx 文件存在于预期的位置，并确保有权限读取和写入这些文件。
+        shutil.copy(template_file, output_file)
+    
     workbook = openpyxl.load_workbook(output_file)
     sheet = workbook.active
     required_fields = config_data["必填项"]
