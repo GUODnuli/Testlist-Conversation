@@ -1,7 +1,7 @@
 import openpyxl
 import os
 import shutil
-from .Data_struct import TreeNode
+from .ListNode import TreeNode
 
 def process_to_excel(root: TreeNode, output_file: str, template_file: str, config_data: dict):
     # 检查excel文件是否存在，若不存在则创建一个
@@ -45,6 +45,8 @@ def process_to_excel(root: TreeNode, output_file: str, template_file: str, confi
             case_path = root_folder+"".join(current_path)
             sheet.cell(row=row_num, column=1).value = case_path
             sheet.cell(row=row_num, column=2).value = node.title
+            sheet.cell(row=row_num, column=3).value = None
+            sheet.cell(row=row_num, column=4).value = "无"
             sheet.cell(row=row_num, column=5).value = node.step
             sheet.cell(row=row_num, column=6).value = node.result
             sheet.cell(row=row_num, column=7).value = case_type
